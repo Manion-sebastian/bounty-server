@@ -10,5 +10,6 @@ db.on('error', err => console.warn("server down", err))
 
 module.exports = {
     Bounty: require('./Bounty'),
-    Blog: require('./Blog')
+    Blog: require('./Blog'),
+    User: require('./User')
 }

@@ -1,6 +1,5 @@
 // req mongoose package
-const mongoose = require('mongoose')
-const models = require('.')
+const mongoose = require('mongoose') 
 
 // define child sub document. 
 const CommentSchema = new mongoose.Schema({
@@ -23,9 +22,14 @@ const BlogSchema = new mongoose.Schema({
         type: String
     },
     // 1:M functionality
-    comments: [CommentSchema]
+    comments: [CommentSchema],
+
+    blogger: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 },{
     timestamps: true
 })
 
-models.export = mongoose.model('Blog', BlogSchema)
+module.exports = mongoose.model('Blog', BlogSchema)
