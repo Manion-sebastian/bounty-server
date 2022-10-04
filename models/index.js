@@ -9,5 +9,6 @@ db.once('open', () => console.log(`connected at ${db.host}:${db.port}`))
 db.on('error', err => console.warn("server down", err))
 
 module.exports = {
-    Bounty: require('./Bounty')
+    Bounty: require('./Bounty'),
+    Blog: require('./Blog')
 }
